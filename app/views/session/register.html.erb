@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-md-4 col-sm-3 col-xs-1">
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-10">
+        <div class="row">
+            <center>
+                <div class="loginPanel">
+                    <div class="logo">
+                        <div class="row">
+                            
+                        </div>
+                    </div>
+                    <% flash.each do |name, msg|%>
+                        <center> 
+                            <div class='flash-message alert alert-<%= name %> flash-message-dashbord' id="flash-message-desktop">
+                                <center><p class="flash-message-dash" style="position: relative;top: -2px;color: #facdcd;"><%= msg %></p></center>
+                            </div>
+                        </center>
+                    <% end %>
+                    <div class="loginDetails">
+                        <div class="loginFrom">
+                            <%= form_for @user, url: register_path do |f|%>
+                                <fieldset class="loginFieldset">
+                                    <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 20px;">
+                                        <div class="fname">
+                                            <%= f.text_field :name, class:"LoginFields", placeholder:"First Name",id:"first_name"%>
+                                           
+                                        </div>    
+                                    </div>
+                                   
+                                    
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="email">
+                                            <%= f.email_field :email, class:"LoginFields", placeholder:"Email", id:"email"%>
+                                            
+                                        </div>    
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="password">
+                                            <%= f.password_field :password, class:"LoginFields", placeholder:"Password", id:"password"%>
+                                           
+                                        </div>    
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="uphone">
+                                            <%= f.phone_field :phone, class:"LoginFields", placeholder:"Phone", id:"phone",require: true,  onkeypress:'validate(event)',  minlength:"10", maxlength:"10"%>
+                                           
+                                        </div>    
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="password">
+                                            <%= f.submit "SignUp", class:"LoginButton" , id:"register"%>
+                                        </div>    
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="RegisterConnect">
+                                            <p class="notResister">already register? <span class="createAnAccountLink"><%= link_to login_path do %>Click here for login.<% end %></span></p>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            <% end %>  
+                        </div>
+                    </center>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-3 col-xs-1">
+    </div>
+</div>
