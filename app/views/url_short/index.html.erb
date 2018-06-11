@@ -1,0 +1,19 @@
+<body>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="form">
+                    <%= form_for @url, url:short_url_path do |f| %>
+                        <fieldset>
+                            <%= f.text_field :long_url, class:""%>
+                            <%= f.submit "Submit" %>
+                        </fieldset>
+                    <% end %>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                
+            </div>
+        </div>
+    </div>
+</body>

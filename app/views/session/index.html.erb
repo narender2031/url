@@ -1,0 +1,43 @@
+<body class="login">    
+    <div class="row">
+        <div class="col-md-2 col-sm-2 col-xs-1">
+        </div>
+            <div class="col-md-8 col-sm-8 col-xs-10" id="login-box" >
+                <div class="row">
+                    <div class="col-md-6  login-card-image">
+                          
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 login-details" style="padding: 50px;">
+                       
+                        <center>
+                            <div class="row">
+                                <h4><strong>Memeber Login</strong></h4>
+                            </div>
+                            <div class="row">
+                                <%= form_tag login_path do %>
+                                    <fieldset>
+                                        <div class="row">
+                                            <%= text_field_tag :email, params[:email], placeholder:"Email", :autocompelete => :off, class:"input-fields-login"%>
+                                        </div>
+                                        <div class="row">
+                                            <%= password_field_tag :password, params[:password], placeholder: "Password", class:"input-fields-login"%>
+                                        </div>
+                                        <div class="row"> 
+                                            <%= submit_tag "Log In", class:"login-button"%>
+                                        </div>
+                                        
+                                    </fieldset>
+                                <% end %>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        <div class="col-md-2 col-sm-2 col-xs-1">
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        $('#flash-message-desktop').fadeOut(3000);
+    </script>
+</body>    
