@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/login', to: "session#index"
   post '/login', to: "session#create"
+  get '/logout', to: "session#logout"
   get '/dash', to: "url_short#index"
   get '/register', to: "session#register"
   post '/register', to: "session#create_register"
