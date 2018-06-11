@@ -12,7 +12,15 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
-                
+                <div class="url_list">
+                <ul>
+                    <% @url_list.each do |url| %>
+                        <li>
+                           <a href="<%= url.long_url %>" class="urls_links"   value = "<%= url.id%>">http://localhost:3000/<%= url.short_url%> </a>
+                        </li>
+                    <% end %>
+                </ul>
+                </div>
             </div>
         </div>
     </div>
